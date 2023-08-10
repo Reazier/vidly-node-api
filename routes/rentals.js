@@ -7,7 +7,7 @@ const Fawn = require("fawn");
 const express = require("express");
 const router = express.Router();
 
-Fawn.init(mongoose);
+Fawn.init('mongodb://link:11223344@cluster0.fzxx6te.mongodb.net/?retryWrites=true&w=majority');
 
 router.get("/", auth, async (req, res) => {
   const rentals = await Rental.find()
