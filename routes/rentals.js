@@ -5,9 +5,11 @@ const auth = require("../middleware/auth");
 const mongoose = require("mongoose");
 const Fawn = require("fawn");
 const express = require("express");
+const config = require('config');
+
 const router = express.Router();
 
-Fawn.init("mongodb + srv://link:11223344@cluster0.fzxx6te.mongodb.net/?retryWrites=true&w=majority");
+Fawn.init(config.get('vidly_db'));
 
 router.get("/", auth, async (req, res) => {
   const rentals = await Rental.find()

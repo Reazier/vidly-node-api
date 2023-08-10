@@ -2,3 +2,4 @@
 logfile.log
 package-lock.json
 .env
+.env.development
