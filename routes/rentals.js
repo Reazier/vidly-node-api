@@ -7,6 +7,7 @@ const Fawn = require("fawn");
 const express = require("express");
 const router = express.Router();
 
+const dbConnectionString = process.env.MOGODB_CONNECTION_STRING
 Fawn.init('mongodb://link:11223344@cluster0.fzxx6te.mongodb.net/?retryWrites=true&w=majority');
 
 router.get("/", auth, async (req, res) => {
