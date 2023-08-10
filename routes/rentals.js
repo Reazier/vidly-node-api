@@ -9,7 +9,7 @@ const config = require('config');
 
 const router = express.Router();
 
-Fawn.init(config.get('vidly_db'));
+Fawn.init(process.env.vidly_db);
 
 router.get("/", auth, async (req, res) => {
   const rentals = await Rental.find()
