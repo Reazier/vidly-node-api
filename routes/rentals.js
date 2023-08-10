@@ -7,7 +7,7 @@ const Fawn = require("fawn");
 const express = require("express");
 const router = express.Router();
 
-const dbConnectionString = process.env.MOGODB_CONNECTION_STRING
+const dbConnectionString = process.env.MONGODB_CONNECTION_STRING
 Fawn.init(dbConnectionString);
 
 router.get("/", auth, async (req, res) => {
